@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(home: Home()));
@@ -6,44 +7,45 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('My first app'),
-          centerTitle: true,
-          backgroundColor: Colors.red[600],
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Text('hello'),
-                Text('world'),
-              ],
-            ),
-            Container(
-              padding: EdgeInsets.all(20),
+      appBar: AppBar(
+        title: Text('My first app'),
+        centerTitle: true,
+        backgroundColor: Colors.red[600],
+      ),
+      body: Row(
+        children: <Widget>[
+          Expanded(flex: 3, child: Image.asset('assets/space-1.jpg')),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(40),
               color: Colors.cyan,
-              child: Text('one'),
+              child: Text('1'),
             ),
-            Container(
-              padding: EdgeInsets.all(30),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(40),
               color: Colors.pinkAccent,
-              child: Text('two'),
+              child: Text('2'),
             ),
-            Container(
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
               padding: EdgeInsets.all(40),
               color: Colors.amber,
-              child: Text('three'),
-            )
-          ],
-        ),
-        floatingActionButton: FloatingActionButton(
-        onPressed: ()
-    {},
-    child: Text('click'),
-    backgroundColor: Colors.red[600],
-    ),
+              child: Text('3'),
+            ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('click'),
+        backgroundColor: Colors.red[600],
+      ),
     );
   }
 }
